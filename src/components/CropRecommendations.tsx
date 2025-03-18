@@ -1,9 +1,10 @@
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useInView } from '@/lib/animations';
 import { AnimatedCard } from './AnimatedCard';
 import { cropIcons, farmImages } from '@/assets';
+import { CustomFarmPlanForm } from './CustomFarmPlanForm';
 
 // Mock data for crop recommendations
 const cropRecommendations = [
@@ -59,6 +60,7 @@ const marketTrends = [
 export const CropRecommendations = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
+  const [customPlanOpen, setCustomPlanOpen] = useState(false);
   
   return (
     <section
@@ -205,7 +207,10 @@ export const CropRecommendations = () => {
                     Get a personalized farming plan based on your specific needs and goals.
                   </p>
                   
-                  <button className="w-full py-2.5 text-sm font-medium rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors">
+                  <button 
+                    className="w-full py-2.5 text-sm font-medium rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+                    onClick={() => setCustomPlanOpen(true)}
+                  >
                     Create Custom Plan
                   </button>
                 </div>
@@ -214,6 +219,11 @@ export const CropRecommendations = () => {
           </div>
         </div>
       </div>
+      
+      <CustomFarmPlanForm
+        open={customPlanOpen}
+        onOpenChange={setCustomPlanOpen}
+      />
     </section>
   );
 };
