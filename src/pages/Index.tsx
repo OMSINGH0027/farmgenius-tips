@@ -4,6 +4,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { WeatherModule } from "@/components/WeatherModule";
 import { SoilAnalysis } from "@/components/SoilAnalysis";
 import { CropRecommendations } from "@/components/CropRecommendations";
+import { CustomFarmPlanForm } from "@/components/CustomFarmPlanForm";
+import { FarmMapSection } from "@/components/FarmMapSection";
 
 const Index = () => {
   return (
@@ -14,7 +16,24 @@ const Index = () => {
         <WeatherModule />
         <SoilAnalysis />
         <CropRecommendations />
+        <FarmMapSection />
       </main>
+      
+      <dialog id="customFarmPlan" className="modal p-0 rounded-2xl shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+        <div className="modal-box p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-background">
+          <h2 className="text-2xl font-semibold mb-6">Create Your Custom Farm Plan</h2>
+          <CustomFarmPlanForm />
+          <button 
+            className="absolute top-4 right-4 p-1 rounded-full hover:bg-foreground/5"
+            onClick={() => document.getElementById('customFarmPlan').close()}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </dialog>
       
       <footer className="py-12 bg-foreground/5">
         <div className="container mx-auto px-4">
