@@ -1,106 +1,88 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 90 29% 97%;
-    --foreground: 40 13% 23%;
-
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 40 13% 23%;
-
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 40 13% 23%;
-
-    --primary: 115 16% 48%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 39 53% 85%;
-    --secondary-foreground: 24 68% 44%;
-
-    --muted: 210 40% 98%;
-    --muted-foreground: 40 8% 46%;
-
-    --accent: 24 68% 44%;
-    --accent-foreground: 0 0% 100%;
-
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 39 30% 88%;
-    --input: 39 30% 88%;
-    --ring: 115 16% 48%;
-
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 40 13% 10%;
-    --foreground: 39 30% 95%;
-
-    --card: 40 13% 15%;
-    --card-foreground: 39 30% 95%;
-
-    --popover: 40 13% 15%;
-    --popover-foreground: 39 30% 95%;
-
-    --primary: 115 16% 48%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 39 30% 20%;
-    --secondary-foreground: 39 30% 95%;
-
-    --muted: 40 13% 20%;
-    --muted-foreground: 39 10% 70%;
-
-    --accent: 24 68% 44%;
-    --accent-foreground: 0 0% 100%;
-
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 40 13% 25%;
-    --input: 40 13% 25%;
-    --ring: 115 16% 48%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
   }
 }
-
+ 
 @layer base {
   * {
     @apply border-border;
   }
   
   html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply scroll-smooth;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.011em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight;
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
   }
 }
 
-@layer components {
+@layer utilities {
   .glass-card {
-    @apply bg-white/70 dark:bg-black/40 backdrop-blur-md;
+    @apply backdrop-blur-md bg-white/10 dark:bg-white/5;
   }
   
   .glass-nav {
-    @apply bg-white/90 dark:bg-black/70 backdrop-blur-lg;
+    @apply backdrop-blur-lg bg-background/80 dark:bg-background/80;
   }
-
+  
   .premium-border {
-    @apply border border-border/50;
+    @apply border-black/5 dark:border-white/10;
+  }
+  
+  .shadow-soft {
+    @apply shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07)];
+  }
+  
+  .shadow-medium {
+    @apply shadow-[0_8px_30px_-5px_rgba(0,0,0,0.1)];
   }
   
   .text-balance {
@@ -108,28 +90,15 @@
   }
 }
 
-@layer utilities {
-  .animation-delay-100 {
-    animation-delay: 100ms;
-  }
-  
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  
-  .animation-delay-500 {
-    animation-delay: 500ms;
-  }
-  
-  .animation-delay-700 {
-    animation-delay: 700ms;
-  }
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
 
-  .mask-linear-gradient {
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-  }
+dialog {
+  outline: none;
+}
+
+.bg-grain-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
