@@ -5,6 +5,7 @@ import { WeatherModule } from "@/components/WeatherModule";
 import { SoilAnalysis } from "@/components/SoilAnalysis";
 import { CropRecommendations } from "@/components/CropRecommendations";
 import { CustomFarmPlanForm } from "@/components/CustomFarmPlanForm";
+import { FarmMapSection } from "@/components/FarmMapSection";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <WeatherModule />
         <SoilAnalysis />
         <CropRecommendations />
+        <FarmMapSection />
       </main>
       
       <dialog id="customFarmPlan" className="modal p-0 rounded-2xl shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm">
